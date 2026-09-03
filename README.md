@@ -3,7 +3,7 @@
 An interactive web dashboard for real-time visualization, department-level metric tracking, and academic performance analysis across student cohorts.
 
 ## Live Demo
-[View Live Application](https://ronitbera.github.io/college-analytics-portal/)
+[View Live Application]([https://ronitbera.github.io/college-analytics-portal/](https://ronitbera.github.io/college-analytics-portal/))
 
 ---
 
