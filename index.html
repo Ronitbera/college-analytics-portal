@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Analytics & Reporting Portal</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div>
+        <h1>College Analytics Portal</h1>
+        <p class="subtitle">Real-time academic performance & department metrics</p>
+      </div>
+      <button id="refreshBtn" class="btn btn-secondary">Refresh Data</button>
+    </header>
+
+    <!-- Filters Section -->
+    <section class="controls-panel">
+      <div class="control-group">
+        <label for="departmentFilter">Department</label>
+        <select id="departmentFilter">
+          <option value="ALL">All Departments</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Information Tech">Information Tech</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="statusFilter">Placement Status</label>
+        <select id="statusFilter">
+          <option value="ALL">All Statuses</option>
+          <option value="Placed">Placed</option>
+          <option value="Seeking">Seeking</option>
+        </select>
+      </div>
+
+      <div class="control-group search-group">
+        <label for="searchInput">Search Student</label>
+        <input type="text" id="searchInput" placeholder="Search by name..." />
+      </div>
+    </section>
+
+    <!-- KPI Metric Cards -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <span class="kpi-label">Total Students</span>
+        <span class="kpi-value" id="kpiTotal">--</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Average CGPA</span>
+        <span class="kpi-value" id="kpiAvgCgpa">--</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Placement Rate</span>
+        <span class="kpi-value" id="kpiPlacementRate">--</span>
+      </div>
+    </section>
+
+    <!-- Analytics Charts Grid -->
+    <section class="analytics-grid">
+      <div class="card chart-card">
+        <h3>Department Enrollment</h3>
+        <div class="chart-wrapper">
+          <canvas id="deptChart"></canvas>
+        </div>
+      </div>
+      <div class="card chart-card">
+        <h3>CGPA Distribution</h3>
+        <div class="chart-wrapper">
+          <canvas id="cgpaChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Data Table -->
+    <section class="card table-card">
+      <div class="table-header">
+        <h3>Student Records</h3>
+        <span id="recordCount" class="record-counter">Showing 0 records</span>
+      </div>
+      <div class="table-container">
+        <table id="recordsTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Semester</th>
+              <th>CGPA</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="recordsBody">
+            <!-- Dynamic Rows rendered by app.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
